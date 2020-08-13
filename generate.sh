@@ -48,7 +48,7 @@ EOF
 
 if [ -f $CONFIG ]; then
   echo "Generating CSR for $FQDN"
-  openssl req -newkey rsa:4096 -nodes -keyout $KEYDIR/$FQDN.key -out $KEYDIR/$FQDN.csr -config $CONFIG
+  openssl req -newkey rsa:4096 -nodes -days 3650 -keyout $KEYDIR/$FQDN.key -out $KEYDIR/$FQDN.csr -config $CONFIG
 else
   echo "ERROR: Not a file - $CONFIG"
 fi
